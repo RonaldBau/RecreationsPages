@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e9e9e9;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.device {
+    width: 365px;
+    height: 740px;
+    border-radius: .75em;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    outline: 8px solid grey;
+    display: flex;
+    flex-direction: column;
+}
+
+.device .status-bar {
+    width: 100%;
+    position: relative;
+    background-color: black;
+    padding: .5em 1em;
+    font-size: .75rem;
+    font-weight: bold;
+    color: whitesmoke;
+
+    display: flex;
+    gap: 1em;
+    /* justify-content: space-between; */
+}
+
+.device main {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(45deg,
+            rgba(0, 0, 0, 1) 35%,
+            rgba(11, 34, 42, 1) 72%,
+            rgba(69, 18, 17, 1) 95%);
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* border: 1px solid cyan; */
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em .75em;
+}
+
+nav .logo {
+    width: 75px;
+}
+
+nav .logo img {
+    width: 100%;
+}
+
+nav .buttons {
+    display: flex;
+    gap: 1em;
+}
+
+nav .buttons .profile {
+    border-radius: 50%;
+}
+
+nav .buttons .search,
+.notification,
+.profile {
+    width: 25px;
+}
+
+.categories {
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    padding: .25em .75em;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+.categories .item {
+    width: auto;
+    padding: .6em .8em;
+    background-color: #9e9e9e30;
+    border-radius: .5em;
+    font-size: .7rem;
+    font-weight: 600;
+    text-align: center;
+    border: 1px #e0e0e025 solid;
+    white-space: nowrap;
+}
+
+.categories .item:hover {
+    cursor: pointer;
+    background-color: #686868;
+}
+.section{
+    width: 100%;
+    padding: 0 .75em;
+    /* border: 1px dashed cyan; */
+}
+.section .title{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: .9rem;
+    padding: .5em 0;
+}
+.section .gallery{
+    display: grid;
+    grid-template-columns: repeat(3,minmax(100px, 1fr));
+    grid-template-rows: repeat(3,1fr);
+    gap: .25em;
+}
+.section .gallery .album{
+    position: relative;
+    border-radius: .25em;
+    overflow: hidden;
+}
+.section .gallery .album:hover{
+    cursor: pointer;
+    opacity: .5;
+}
+.section .gallery .album::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.9));
+}
+.section .gallery .album img{
+    width: 100%;
+    height: 100%;
+}
+.section .gallery .album .song{
+    position: absolute;
+    width: 100%;
+    color: white;
+    z-index: 1;
+    display: block;
+    bottom: 0;
+    font-size: .65rem;
+    font-weight: 500;
+    padding: .25em .5em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.section .navigation{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .25em;
+    padding: .5em;
+}
+.section .navigation .circle{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #686868;
+}
+.section .navigation .circle.active{
+    background-color: white;
+}
+.section.quick-picks .title .play-all{
+    border: 1px solid #e0e0e045;
+    border-radius: 15px;
+    font-size: .7rem; 
+    font-weight: 500;
+    padding: .5em .75em;
+    margin: 0 .25em;
+}
+.section.quick-picks .items{
+    display: flex;
+    gap: 1em;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    padding-bottom: 1em;
+}
+.section.quick-picks .items .item{
+    /* border: 1px dashed yellow; */
+    width: 500px;
+    display: flex;
+    align-items: center;
+}
+.section.quick-picks .items .item .imagen{
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: .25em;
+}
+.section.quick-picks .items .item .imagen img{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.section.quick-picks .items .item .details{
+    /* border: 1px dashed cyan; */
+    padding: .75em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.section.quick-picks .items .item .details .title{
+    font-weight: 600;
+    font-size: .8rem;
+}
+.section.quick-picks .items .item .others{
+    display: flex;
+    gap: .25em;
+    align-items: center;
+    font-size: .75rem;
+    color: gray;
+    white-space: nowrap;
+    width: 180px;
+}
+
+.section.quick-picks .items .item .others img{
+    width: 15px;
+    filter: contrast(.25)
+}
+.section.quick-picks .items .item .others .break{
+    width: 3px;
+    height: 3px;
+    background-color: gray;
+    border-radius: 50%;
+}
+.section.quick-picks .items .item .more-options{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .25em;
+    padding: .25em;
+}
+.section.quick-picks .items .item .more-options .circle{
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.footer {
+    background-color: #1d1d1d;
+    width: 100%;
+    font-size: .6rem;
+    bottom: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .musica {
+    padding: .85em 1.25em;
+}
+
+.footer .musica .info {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+}
+
+.footer .musica .info .cover {
+    border-radius: .3em;
+}
+
+.footer .musica .info .detalles {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: .35em;
+}
+
+.footer .musica .info .detalles .cancion {
+    font-weight: 500;
+}
+
+.footer .musica .info .detalles .autor {
+    color: #a8a8a8;
+}
+
+.footer .musica .info .controles {
+    display: flex;
+    gap: 2em;
+}
+
+.footer .musica .info .controles img {
+    width: 28px;
+}
+
+.footer .reproductor {
+    background-color: #404040;
+    height: 2px;
+    width: 100%;
+}
+
+.footer .reproductor .linea-tiempo {
+    background-color: #efe;
+    width: 34%;
+    height: inherit;
+}
+
+.footer .menu {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer .menu li {
+    padding: .8em 0;
+    display: flex;
+    flex-direction: column;
+    gap: .25em;
+    align-items: center;
+}
+
+.footer .menu img {
+    width: 28px;
+}
